@@ -18,7 +18,7 @@
   ],
   "dependencies": {
     "wet-boew": "wet-boew/wet-boew-cdn#v4.0.19+2",
-    "theme-wet-boew": "wet-boew/themes-cdn#v4.0.19+2-theme-wet-boew"
+    "theme-wet-boew": "https://github.com/wet-boew/themes-cdn/archive/v4.0.19+2-theme-wet-boew.tar.gz"
   },
   "main": "index.html"
 }
