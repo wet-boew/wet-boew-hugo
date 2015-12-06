@@ -1,0 +1,71 @@
+{{ partial "header/default_header.html" . }}
+<div class="row">
+    <div class="col-md-12">
+        <article class="post">
+            <header>
+                <h1 id="wb-cont" property="name">
+                    {{ .Title }}
+                </h1>
+                <div class="post-date mrgn-bttm-md text-muted text-right small">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                    <time datetime="{{ .Date.Format .Site.Params.DateForm }}">
+                        {{ .Date.Format .Site.Params.DateForm }}
+                    </time>
+                </div>
+                <div class="wb-share mrgn-bttm-md text-muted text-right small" data-wb-share='{" pnlId": "pnl1"}'></div>
+            </header>
+            <div class="post-content">
+                {{ .Content }}
+            </div>
+            <aside>
+                {{ $baseurl := .Site.BaseURL }}
+                <ul class="list-inline post-tags">
+                    {{ range .Params.tags }}
+                    <li>
+                        <a href="{{ $baseurl }}/tags/{{ . | urlize }}">
+                            <i class="fa fa-tags"></i>
+                            {{ . }}
+                        </a>
+                    </li>
+                    {{ end }}
+                </ul>
+                {{ if .Site.Params.ShowRelatedPost }}
+                <!-- Related post. -->
+                <h3>Related Post</h3>
+                <ul class="post-rels">
+                    {{ $page_link := .Permalink }}
+                    {{ $tags := .Params.tags }}
+                    {{ range .Site.Pages }}
+                    {{ $page := . }}
+                    {{ $has_common_tags := intersect $tags .Params.tags | len | lt 0 }}
+                    {{ if and $has_common_tags (ne $page_link $page.Permalink) }}
+                    <li><a href="{{ $page.Permalink }}">{{ $page.Title }}</a></li>
+                    {{ end }}
+                    {{ end }}
+                </ul>
+            </aside>
+            {{ end }}
+            <!-- Pagination. -->
+            <footer>
+                <nav>
+                    <ul class="pager">
+                        {{ if .Prev }}
+                        <li class="previous"><a href="{{ .Prev.Permalink }}"><span aria-hidden="true">&larr;</span> Older</a></li>
+                        {{ else }}
+                        <li class="previous disabled"><a href="#"><span aria-hidden="true">&larr;</span> Older</a></li>
+                        {{ end }}
+
+                        {{ if .Next }}
+                        <li class="next"><a href="{{ .Next.Permalink }}">Newer <span aria-hidden="true">&rarr;</span></a></li>
+                        {{ else }}
+                        <li class="next disabled"><a href="#">Newer <span aria-hidden="true">&rarr;</span></a></li>
+                        {{ end }}
+                    </ul>
+                </nav>
+                <!-- disqus. -->
+                {{ partial "comments/disqus.html" . }}
+            </footer>
+        </article>
+    </div>
+</div>
+{{ partial "footer/default_footer.html" . }}

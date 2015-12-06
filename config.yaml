@@ -1,0 +1,40 @@
+BaseUrl: "http://wet-boew.github.io"
+ContentDir: "content"
+LayoutDir: "layouts"
+PublishDir: "public"
+BuildDrafts: true
+LanguageCode: "en-us"
+Title: "Hugo variant for WxT"
+PluralizeListTitles: False
+menu:
+  main:
+    - Name: "WxT Project"
+      Weight: -110
+      Identifier: "wxt"
+      Url: "http://wet-boew.github.io/v4.0/ci/index-en.html"
+    - Name: "Implement WxT"
+      Weight: -110
+      Identifier: "implement"
+      Url: "http://wet-boew.github.io/wet-boew/docs/start-en.html"
+    - Name: "Contribute to WxT"
+      Weight: -110
+      Identifier: "contribute"
+      Url: "http://wet-boew.github.io/wet-boew/docs/pull-en.html"
+Params:
+  Author: "Web Experience Toolkit"
+  Banner: "Providing a simple base theme for leveraging the Web Experience Toolkit with Hugo!"
+  DateForm: "Mon Jan 2 15:04:05 2006"
+  disqusShortname: "XXXX-XXXX-XXXX"
+  GoogleAnalyticsUserID: "XXXX-XXXX-XXXX"
+  Github: "wet-boew/wet-boew-hugo"
+  Search: "wet-boew.github.io"
+  ShowRelatedPost: True
+  Slogan: "Collaborative open source project led by the Government of Canada"
+  SyntaxHighlightTheme: "monokai.min.css"
+  Theme: "theme-wet-boew"
+Indexes:
+  tag: "tags"
+permalinks:
+  post: /post/:year/:month/:day/:title/
+MetadataFormat: "yaml"
+# Theme: "theme-gc-intranet"

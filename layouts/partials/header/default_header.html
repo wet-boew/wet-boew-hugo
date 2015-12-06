@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+{{ "<!--[if lt IE 9]>" | safeHTML }}
+<html class="no-js lt-ie9" lang="en" dir="ltr">
+{{ "<![endif]-->" | safeHTML }}
+{{ "<!--[if gt IE 8]><!-->" | safeHTML }}
+<html class="no-js" lang="en" dir="ltr">
+{{ "<!--<![endif]-->" | safeHTML }}
+<head>
+    <meta charset="utf-8">
+    <!-- Enable responsiveness on mobile devices-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <title>
+        {{ if eq .URL "/" }}
+        {{ .Site.Title }}
+        {{ else if eq .URL "/post/" }}
+        All Entries &middot; {{ .Site.Title }}
+        {{ else if in .URL "/tags/" }}
+        {{ .Site.Title }}
+        {{ else }}
+        {{ .Title }}
+        {{ end }}
+    </title>
+    <!-- WxT -->
+    {{ partial "header/header_resources.html" . }}
+    <!-- CSS -->
+    <link rel="stylesheet" href="//yandex.st/highlightjs/8.0/styles/{{ .Site.Params.SyntaxHighlightTheme }}">
+    <link rel="stylesheet" href="{{ .Site.BaseURL }}/css/styles.css">
+    <link rel="stylesheet" href="{{ .Site.BaseURL }}/css/custom.css">
+    <!-- Icons -->
+    <link rel="shortcut icon" href="{{ .Site.BaseURL }}/assets/images/favicon.ico">
+    <!-- RSS -->
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ .Site.BaseURL }}/index.xml">
+</head>
+<body vocab="http://schema.org/" typeof="WebPage">
+    <ul id="wb-tphp">
+        <li class="wb-slc">
+            <a class="wb-sl" href="#wb-cont">Skip to main content</a>
+        </li>
+        <li class="wb-slc visible-sm visible-md visible-lg">
+            <a class="wb-sl" href="#wb-info">Skip to "About this site"</a>
+        </li>
+    </ul>
+    <header role="banner">
+        <div id="wb-bnr">
+            <div id="wb-bar">
+                <div class="container">
+                    <div class="row">
+                        <section id="wb-lng" class="visible-md visible-lg">
+                            <h2>Language selection</h2>
+                            <ul class="text-right">
+                                <li class="curr">English&#32;<span>(current)</span>
+                                </li>
+                            </ul>
+                        </section>
+                        <section class="wb-mb-links col-xs-12 visible-sm visible-xs" id="wb-glb-mn">
+                            <h2>Search and menus</h2>
+                            <ul class="pnl-btn list-inline text-right">
+                                <li><a href="#mb-pnl" title="Search and menus" aria-controls="mb-pnl" class="overlay-lnk btn btn-sm btn-default" role="button"><span class="glyphicon glyphicon-search"><span class="glyphicon glyphicon-th-list"><span class="wb-inv">Search and menus</span></span></span></a>
+                                </li>
+                            </ul>
+                            <div id="mb-pnl"></div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div id="wb-sttl" class="col-md-8">
+                        <a href="{{ .Site.BaseURL }}">
+                            <object type="image/svg+xml" tabindex="-1" data="{{ .Site.BaseURL }}/assets/images/logo.svg"></object>
+                            <span>{{ .Site.Title }}<span class="wb-inv">, </span><small>{{ .Site.Params.Slogan }}</small>
+                            </span>
+                        </a>
+                    </div>
+                    <section id="wb-srch" class="col-md-4 visible-md visible-lg">
+                        <h2>Search</h2>
+                        <form action="https://google.ca/search" method="get" role="search" class="form-inline">
+                            <div class="form-group">
+                                <label for="wb-srch-q">Search website</label>
+                                <input id="wb-srch-q" class="form-control" name="q" type="search" value="" size="27" maxlength="150">
+                                <input type="hidden" name="q" value="site:{{ .Site.Params.Search }} OR site:github.com/{{ .Site.Params.Github }}">
+                            </div>
+                            <button type="submit" id="wb-srch-sub" class="btn btn-default">Search</button>
+                        </form>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <nav role="navigation" id="wb-sm" data-trgt="mb-pnl" class="wb-menu visible-md visible-lg" typeof="SiteNavigationElement">
+            <div class="container nvbar">
+                <h2>Topics menu</h2>
+                <div class="row">
+                    <ul class="list-inline menu">
+                        {{ $currentNode := . }}
+                        {{ range .Site.Menus.main }}
+                        {{ if .HasChildren }}
+                        <li class="{{if $currentNode.HasMenuCurrent "main" . }} active{{end}}">
+                        <a href="#" class="item">
+                            {{ .Pre }}
+                            <span>{{ .Name }}</span>
+                        </a>
+                        <ul class="sm list-unstyled" role="menu">
+                            {{ range .Children }}
+                            <li{{if $currentNode.IsMenuCurrent "main" . }} class="active"{{end}}><a href="{{.URL}}"> {{ .Name }}</a></li>
+                            {{ end }}
+                        </ul>
+                        {{ else }}
+                        <li>
+                        <a class="" href="{{ .URL }}">
+                            {{ .Pre }}
+                            <span>{{ .Name }}</span>
+                        </a>
+                        {{ end }}
+                        </li>
+                        {{ end }}
+                        {{ range where .Site.Pages "Type" "page" }}
+                        <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+                        {{ end }}
+                        {{ if isset .Site.Params "Facebook" }}
+                        <li>
+                            <a href="https://www.facebook.com/{{ .Site.Params.Facebook }}" target="_blank">
+                                <i class="fa fa-facebook-square"></i>
+                                Facebook</a>
+                        </li>
+                        {{ end }}
+                        {{ if isset .Site.Params "Twitter" }}
+                        <li>
+                            <a href="https://twitter.com/{{ .Site.Params.Twitter }}" target="_blank">
+                                <i class="fa fa-twitter-square"></i>
+                                Twitter</a>
+                        </li>
+                        {{ end }}
+                        {{ if isset .Site.Params "Github" }}
+                        <li>
+                            <a href="https://github.com/{{ .Site.Params.Github }}" target="_blank">
+                                <i class="fa fa-github-square"></i>
+                                GitHub
+                            </a>
+                        </li>
+                        {{ end }}
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <nav role="navigation" id="wb-bc" property="breadcrumb">
+            <h2>You are here:</h2>
+            <div class="container">
+                <div class="row">
+                    {{ $url := replace .Permalink ( printf "%s" .Site.BaseURL) "" }}
+                    {{ $.Scratch.Add "path" .Site.BaseURL }}
+                    <ol class="breadcrumb">
+                      <li><a href="{{ .Site.BaseURL }}">Home</a></li>
+                      {{ range $index, $element := split $url "/" }}
+                        {{ $.Scratch.Add "path" $element }}
+                          {{ if ne $element "" }}
+                            {{ if eq $index 0 }}
+                            <li><a href='{{ $.Scratch.Get "path" }}'>{{ . }}</a></li>
+                            {{ end }}
+                          {{ $.Scratch.Add "path" "/" }}
+                          {{ end }}
+                      {{ end }}
+                      <li>{{ .Title }}</li>
+                    </ol>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main role="main" property="mainContentOfPage" class="container">

@@ -1,0 +1,19 @@
+language: go
+go:
+  - 1.3
+before_install:
+  - cd ..
+  - git clone https://github.com/spf13/hugo.git
+  - cd hugo
+  - go get
+  - cd ../website
+install:
+  - sudo apt-get install nodejs npm
+  - npm install -qg bower grunt-cli
+  - git config --global user.email "${GIT_EMAIL}"
+  - git config --global user.name "${GIT_NAME}"
+script:
+  - cd themes/wxt && bower install && cd ../..
+  - git remote set-url origin "https://${GH_TOKEN}@github.com/orgname/repo.github.io.git"
+  - git submodule add -f "https://${GH_TOKEN}@github.com/orgname/repo.github.io.git" public
+  - ./deploy.sh "Initial commit"

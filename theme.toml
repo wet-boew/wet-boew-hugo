@@ -1,0 +1,9 @@
+name = "Hugo variant for WxT"
+license = "MIT"
+licenselink = "https://raw.githubusercontent.com/wet-boew/wet-boew-hugo/master/LICENSE.md"
+description = "Hugo variant for WxT an Open source code library for building innovative websites that are accessible, usable, interoperable, mobile-friendly and multilingual."
+homepage = "http://github.com/wet-boew/wet-boew-hugo"
+tags = ["wxt"]
+features = ["wxt"]
+[author]
+    name = "Web Experience Toolkit"

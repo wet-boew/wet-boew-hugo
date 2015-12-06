@@ -1,0 +1,18 @@
+{{ "<!--[if gte IE 9 | !IE ]><!-->" | safeHTML }}
+    <link href="{{ .Site.BaseURL }}/lib/wet-boew/assets/images/favicon.ico" rel="icon" type="image/x-icon" />
+    <link rel="stylesheet" href="{{ .Site.BaseURL }}/lib/{{ .Site.Params.Theme }}/css/theme.min.css" />
+{{ "<!--<![endif]-->" | safeHTML }}
+{{ "<!--[if lt IE 9]>" | safeHTML }}
+	<link href="{{ .Site.BaseURL }}/lib/{{ .Site.Params.Theme }}/assets/images/favicon.ico" rel="shortcut icon" />
+	<link rel="stylesheet" href="{{ .Site.BaseURL }}/lib/{{ .Site.Params.Theme }}/css/ie8-theme.min.css" />
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script src="{{ .Site.BaseURL }}/lib/wet-boew/js/ie8-wet-boew.min.js"></script>
+{{ "<![endif]-->" | safeHTML }}
+<!-- CSS -->
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="//yandex.st/highlightjs/8.0/styles/{{ .Site.Params.SyntaxHighlightTheme }}">
+<noscript><link rel="stylesheet" href="{{ .Site.BaseURL }}/lib/wet-boew/css/noscript.min.css" /></noscript>
+<link rel="stylesheet" href="{{ .Site.BaseURL }}/css/styles.css">
+<link rel="stylesheet" href="{{ .Site.BaseURL }}/css/custom.css">
+<!-- Icons -->
+<link rel="shortcut icon" href="{{ .Site.BaseURL }}/assets/images/favicon.ico">

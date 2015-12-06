@@ -1,0 +1,8 @@
+{{ partial "header/default_header.html" . }}
+<h1 id="wb-cont" property="name">{{ .Site.Title }}</h1>
+<div class="posts">
+    {{ range .Data.Pages }}
+    {{ .Render "li"}}
+    {{ end }}
+</div>
+{{ partial "footer/default_footer.html" . }}

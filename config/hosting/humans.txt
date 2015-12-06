@@ -1,0 +1,8 @@
+/* humanstxt.org */
+
+/* TEAM */
+Developer: Web Experience Toolkit (WxT)
+
+/* SITE */
+Language: English
+Doctype: HTML5
