@@ -1,9 +1,9 @@
 {
   "name": "wet-boew-hugo",
-  "version": "4.0.1-dev",
+  "version": "4.0.1",
   "homepage": "Web Experience Toolkit (WxT)",
   "authors": [
-    "WET-BOEW Team"
+    "WET-BOEW"
   ],
   "description": "Web Experience Toolkit (WET) / Boîte à outils de l'expérience Web (BOEW)",
   "license": "MIT",
@@ -17,8 +17,8 @@
     "tests"
   ],
   "dependencies": {
-    "wet-boew": "wet-boew/wet-boew-cdn#v4.0.22",
-    "theme-wet-boew": "https://github.com/wet-boew/themes-cdn/archive/v4.0.22-theme-wet-boew.tar.gz"
+    "wet-boew": "wet-boew/wet-boew-cdn#v4.0.24",
+    "theme-wet-boew": "https://github.com/wet-boew/themes-cdn/archive/v4.0.24-theme-wet-boew.tar.gz"
   },
   "main": "index.html"
 }

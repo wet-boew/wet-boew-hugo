@@ -37,4 +37,3 @@ Indexes:
 permalinks:
   post: /post/:year/:month/:day/:title/
 MetadataFormat: "yaml"
-# Theme: "theme-gc-intranet"

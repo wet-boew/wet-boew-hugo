@@ -113,9 +113,7 @@
                         {{ end }}
                         </li>
                         {{ end }}
-                        {{ range where .Site.Pages "Type" "page" }}
-                        <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
-                        {{ end }}
+
                         {{ if isset .Site.Params "Facebook" }}
                         <li>
                             <a href="https://www.facebook.com/{{ .Site.Params.Facebook }}" target="_blank">
