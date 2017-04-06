@@ -1,12 +1,3 @@
-    {{ if ne .URL "/" }}
-    <dl id="wb-dtmd">
-        <dt>Date modified:&#32;</dt>
-        <dd>
-            <time property="dateModified">{{ .Date.Format .Site.Params.DateForm }}</time>
-        </dd>
-    </dl>
-    {{ end }}
-</main>
 <footer role="contentinfo" id="wb-info" class="visible-sm visible-md visible-lg wb-navcurr">
     <div class="container">
         <nav role="navigation" class="row">
@@ -35,12 +26,9 @@
             <section class="col-sm-3">
                 <h3>Stay connected</h3>
                 <ul class="list-unstyled">
-                    <li><a href="https://twitter.com/WebExpToolkit">Twitter</a></li>
+                    <li><a href="https://twitter.com/{{ .Site.Params.Twitter }}">Twitter</a></li>
                 </ul>
             </section>
         </nav>
     </div>
 </footer>
-{{ partial "footer/footer_resources.html" . }}
-</body>
-</html>

@@ -1,0 +1,8 @@
+{{ if ne .URL "/" }}
+<dl id="wb-dtmd">
+    <dt>Date modified:&#32;</dt>
+    <dd>
+        <time property="dateModified">{{ .Date.Format .Site.Params.DateForm }}</time>
+    </dd>
+</dl>
+{{ end }}

@@ -26,11 +26,12 @@
     {{ partial "header/skiplink.html" . }}
     {{ partial "header/header.html" . }}
     <main role="main" property="mainContentOfPage" class="container">
-        <h1 id="wb-cont" property="name">{{ .Site.Title }}</h1>
-        <div class="drupal">
-            {{ range .Data.Pages }}
-            {{ .Render "li"}}
-            {{ end }}
+        <div class="col-md-12">
+            <h1><span class="glyphicon glyphicon-warning-sign mrgn-rght-md"></span>404 - Page Not Found</h1>
+            <p>We're sorry you ended up here. Sometimes a page gets moved or deleted, but hopefully we can help you find what you're looking for.</p>
+            <ul>
+                <li>Return to the <a href="{{ .Site.BaseURL }}">home page</a></li>
+            </ul>
         </div>
     </main>
     {{ partial "footer/footer.html" . }}

@@ -1,0 +1,9 @@
+<header role="banner">
+    {{ if eq .Site.Params.Theme "theme-gcweb" }}
+        {{ partial "header/gcweb.html" . }}
+    {{ else }}
+        {{ partial "header/wxt.html" . }}
+    {{ end }}
+    {{ partial "menu/megamenu.html" . }}
+    {{ partial "header/breadcrumb.html" . }}
+</header>

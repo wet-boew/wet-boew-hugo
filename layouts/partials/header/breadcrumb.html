@@ -1,0 +1,22 @@
+<nav role="navigation" id="wb-bc" property="breadcrumb">
+    <h2>You are here:</h2>
+    <div class="container">
+        <div class="row">
+            {{ $url := replace .Permalink ( printf "%s" .Site.BaseURL) "" }}
+            {{ $.Scratch.Add "path" .Site.BaseURL }}
+            <ol class="breadcrumb">
+                <li><a href="{{ .Site.BaseURL }}">Home</a></li>
+                  {{ range $index, $element := split $url "/" }}
+                    {{ $.Scratch.Add "path" $element }}
+                      {{ if ne $element "" }}
+                        {{ if eq $index 0 }}
+                        <li><a href='{{ $.Scratch.Get "path" }}'>{{ . }}</a></li>
+                        {{ end }}
+                      {{ $.Scratch.Add "path" "/" }}
+                      {{ end }}
+                  {{ end }}
+                <li>{{ .Title }}</li>
+            </ol>
+        </div>
+    </div>
+</nav>

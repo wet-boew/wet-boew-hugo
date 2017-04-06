@@ -32,6 +32,7 @@ Params:
   Slogan: "Collaborative open source project led by the Government of Canada"
   SyntaxHighlightTheme: "monokai.min.css"
   Theme: "theme-wet-boew"
+  Twitter: "WebExpToolkit"
 Indexes:
   tag: "tags"
 permalinks:

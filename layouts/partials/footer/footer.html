@@ -1,0 +1,6 @@
+{{ if eq .Site.Params.Theme "theme-gcweb" }}
+  {{ partial "footer/gcweb.html" . }}
+{{ else }}
+  {{ partial "footer/wxt.html" . }}
+{{ end }}
+{{ partial "resources/footer.html" . }}

@@ -27,9 +27,9 @@
     {{ partial "header/header.html" . }}
     <main role="main" property="mainContentOfPage" class="container">
         <h1 id="wb-cont" property="name">{{ .Site.Title }}</h1>
-        <div class="drupal">
+        <div class="posts">
             {{ range .Data.Pages }}
-            {{ .Render "li"}}
+            {{ .Render "summary"}}
             {{ end }}
         </div>
     </main>

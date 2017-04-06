@@ -1,8 +1,38 @@
-{{ partial "header/default_header.html" . }}
-<h1 id="wb-cont" property="name">{{ .Site.Title }}</h1>
-<div class="posts">
-    {{ range .Data.Pages }}
-    {{ .Render "li"}}
-    {{ end }}
-</div>
-{{ partial "footer/default_footer.html" . }}
+<!DOCTYPE html>
+{{ "<!--[if lt IE 9]>" | safeHTML }}
+<html class="no-js lt-ie9" lang="en" dir="ltr">
+{{ "<![endif]-->" | safeHTML }}
+{{ "<!--[if gt IE 8]><!-->" | safeHTML }}
+<html class="no-js" lang="en" dir="ltr">
+{{ "<!--<![endif]-->" | safeHTML }}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <title>
+        {{ if eq .URL "/" }}
+        {{ .Site.Title }}
+        {{ else if eq .URL "/post/" }}
+        All Entries &middot; {{ .Site.Title }}
+        {{ else if in .URL "/tags/" }}
+        {{ .Site.Title }}
+        {{ else }}
+        {{ .Title }}
+        {{ end }}
+    </title>
+    {{ partial "resources/wxt.html" . }}
+    {{ partial "resources/custom.html" . }}
+</head>
+<body vocab="http://schema.org/" typeof="WebPage">
+    {{ partial "header/skiplink.html" . }}
+    {{ partial "header/header.html" . }}
+    <main role="main" property="mainContentOfPage" class="container">
+        <h1 id="wb-cont" property="name">{{ .Site.Title }}</h1>
+        <div class="posts">
+            {{ range .Data.Pages }}
+            {{ .Render "li"}}
+            {{ end }}
+        </div>
+    </main>
+    {{ partial "footer/footer.html" . }}
+</body>
+</html>

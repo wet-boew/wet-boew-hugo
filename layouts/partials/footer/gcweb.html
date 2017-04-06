@@ -1,0 +1,54 @@
+<footer role="contentinfo" id="wb-info">
+    <nav role="navigation" class="container wb-navcurr">
+        <h2>About this site</h2>
+        <section class="col-sm-3">
+            <h3>Contact us</h3>
+            <ul class="list-unstyled">
+                <li><a href="https://github.com/{{ .Site.Params.Github }}/issues/new">Questions or comments?</a></li>
+            </ul>
+        </section>
+        <section class="col-sm-3">
+            <h3>About</h3>
+            <ul class="list-unstyled">
+                <li><a href="http://wet-boew.github.io/wet-boew/index-en.html#about">About the Web Experience Toolkit</a></li>
+                <li><a href="http://www.tbs-sct.gc.ca/ws-nw/index-eng.asp">About the Web Standards</a>
+                </li>
+            </ul>
+        </section>
+        <section class="col-sm-3">
+            <h3>News</h3>
+            <ul class="list-unstyled">
+                <li><a href="https://github.com/{{ .Site.Params.Github }}/pulse">Recent project activity</a></li>
+                <li><a href="https://github.com/{{ .Site.Params.Github }}/graphs">Project statistics</a></li>
+            </ul>
+        </section>
+        <section class="col-sm-3">
+            <h3>Stay connected</h3>
+            <ul class="list-unstyled">
+                <li><a href="https://twitter.com/{{ .Site.Params.Twitter }}">Twitter</a></li>
+            </ul>
+        </section>
+    </nav>
+    <div class="brand">
+        <div class="container">
+            <div class="row">
+                <nav class="col-md-10 ftr-urlt-lnk">
+                    <h2 class="wb-inv">About this site</h2>
+                    <ul>
+                        <li><a href="https://www.canada.ca/en/social.html">Social media</a></li>
+                        <li><a href="https://www.canada.ca/en/mobile.html">Mobile applications</a></li>
+                        <li><a href="https://www1.canada.ca/en/newsite.html">About Canada.ca</a></li>
+                        <li><a href="https://www.canada.ca/en/transparency/terms.html">Terms and conditions</a></li>
+                        <li><a href="https://www.canada.ca/en/transparency/privacy.html">Privacy</a></li>
+                    </ul>
+                </nav>
+                <div class="col-xs-6 visible-sm visible-xs tofpg">
+                    <a href="#wb-cont">Top of Page <span class="glyphicon glyphicon-chevron-up"></span></a>
+                </div>
+                <div class="col-xs-6 col-md-2 text-right">
+                    <object type="image/svg+xml" tabindex="-1" role="img" data="{{ .Site.BaseURL }}/lib/{{ .Site.Params.Theme }}/assets/wmms-blk.svg" aria-label="Symbol of the Government of Canada"></object>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
