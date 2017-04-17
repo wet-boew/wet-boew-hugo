@@ -13,37 +13,38 @@ Examples of this theme in use can be found at:
 
 ## Requirements
 
-The theme is built using the Web Experience Toolkit, therefore there are a few mandatory requirements to get started.
+The theme is built using the Web Experience Toolkit; consequently there are a
+few mandatory requirements to get started:
 
   * [hugo 0.13+][hugo]: `brew install hugo`
   * [node.js][nodejs]: `brew install npm`
   * [bower][bower]: `npm install bower -g`
 
-Additionally for SASS support the following requirements should be met:
-
-  * [Ruby 1.9+][ruby]: sass compilation (optional)
-  * [compass][compass]: gem install compass
-
 ## How to Use the Theme
 
-Once you have the requirements installed, you can start to use this theme in your hugo project.
+Once the requirements have been met, there are a few ways you can instantiate
+a new project to leverage this theme:
 
-  * hugo new site `website` (ensure using config.yaml format)
-  * mkdir themes && cd themes
-  * git clone https://github.com/wet-boew/wet-boew-hugo.git wxt && cd wxt
-  * Run `bower install` to install latest version of WxT
-  * Run hugo server from hugo root
+## Skeleton
 
-## Helper Scripts
+For your convenience a skeleton folder has been added which provides a baseline
+scaffold to get started with this theme. Simply copy the folder and rename all
+instances of 'wet-boew/wet-boew-hugo-skel' + 'wet-boew-hugo-skel' with your
+new namespace.
 
-  * Copy config/ci/* to hugo root
-  * Copy config/scripts/* to hugo root
-  * Copy config/hosting/* to hugo root static folder
+## Manual Steps
 
-## Configuration
+Simply follow the commands listed below given you have the appropriate files
+(config.yml|toml etc) at the project root.
 
-  Specific configuration options are available in [config.yaml] which can be copied from the theme into your hugo root (needs restart).
-
+```sh
+    hugo new site `website`
+    mkdir themes && cd themes
+    git clone https://github.com/wet-boew/wet-boew-hugo.git wxt && cd wxt
+    bower install
+    hugo server --theme=wxt \
+                --watch
+```
 
 <!-- Links Referenced -->
 
@@ -54,5 +55,5 @@ Once you have the requirements installed, you can start to use this theme in you
 [nodejs]:               http://nodejs.org
 [ruby]:                 http://ruby-lang.org
 [travisci]:             http://travis-ci.org/wet-boew/wet-boew-hugo
-[travisci-badge]:       https://api.travis-ci.org/wet-boew/wet-boew-hugo?branch=master
+[travisci-badge]:       https://api.travis-ci.org/wet-boew/wet-boew-hugo.svg?branch=master
 [wet-boew-hugo]:        https://github.com/wet-boew/wet-boew-hugo

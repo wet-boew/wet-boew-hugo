@@ -1,0 +1,32 @@
+BaseUrl: "http://wet-boew-hugo-skel.github.io"
+ContentDir: "content"
+LayoutDir: "layouts"
+PublishDir: "public"
+BuildDrafts: true
+LanguageCode: "en-us"
+Title: "WxT"
+PluralizeListTitles: False
+menu:
+  main:
+    - Name: "WxT"
+      Weight: -110
+      Identifier: "wxt"
+      URL: "/wxt/"
+Params:
+  Author: "WxT Team"
+  Banner: "Providing information on work being done by the WxT team!"
+  DateForm: "2006-01-02"
+  disqusShortname: "wxt"
+  GoogleAnalyticsUserID: "XXXX-XXXX-XXXX"
+  Github: "wet-boew/wet-boew-hugo-skel"
+  Search: "wet-boew-hugo-skel.github.io"
+  ShowRelatedPost: True
+  Slogan: "Portfolio site for WxT"
+  SyntaxHighlightTheme: "monokai.min.css"
+  Theme: "theme-wet-boew"
+  Twitter: "WebExpToolkit"
+Indexes:
+  tag: "tags"
+permalinks:
+  post: /post/:year/:month/:day/:title/
+MetadataFormat: "yaml"

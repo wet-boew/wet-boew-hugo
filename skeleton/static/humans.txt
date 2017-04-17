@@ -1,0 +1,17 @@
+/* humanstxt.org */
+
+/* TEAM */
+  Developer: WxT
+  Contact: wet-boew-hugo-skel [at] github.io
+
+/* PORTFOLIO MANAGER */
+
+  Portfolio Manager: Andrew Sinkinson
+  Twitter: @sinkinsona
+  From: Ottawa, Canada
+
+/* SITE */
+  Last update: 2017/03/04
+  Language: English
+  Doctype: HTML5
+  IDE: Atom
