@@ -3,7 +3,7 @@ Hugo variant for WxT
 
 [![Build Status][travisci-badge]][travisci]
 
-Hugo variant of the Web Experience Toolkit (WET)
+[Hugo][hugo] variant of the Web Experience Toolkit (WET)
 
 ## Example(s)
 
