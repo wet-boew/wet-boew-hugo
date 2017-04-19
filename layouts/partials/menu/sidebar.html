@@ -1,0 +1,28 @@
+<nav role="navigation" id="wb-sec" typeof="SiteNavigationElement" class="col-md-3 col-md-pull-9 visible-md visible-lg">
+    <h2>Sidebar</h2>
+    <ul class="list-group menu list-unstyled">
+        <li>
+            <h3 class="wb-navcurr">Sidebar</h3>
+            <ul class="list-group menu list-unstyled">
+                {{ $currentPage := . }}
+                {{ range .Site.Menus.sidebar }}
+                    {{ if .HasChildren }}
+                    <li{{if $currentPage.IsMenuCurrent "sidebar" . }} class="active"{{end}}>
+                        <a href="{{.URL}}" class="list-group-item">{{ .Name }}</a>
+                        <ul class="list-group menu list-unstyled">
+                            {{ range .Children }}
+                            <li{{if $currentPage.IsMenuCurrent "sidebar" . }} class="active"{{end}}>
+                                <a href="{{.URL}}" class="list-group-item">{{ .Name }}</a>
+                            </li>
+                            {{ end }}
+                        </ul>
+                    {{else}}
+                    <li>
+                        <a href="{{.URL}}" class="list-group-item">{{ .Name }}</a>
+                    {{end}}
+                    </li>
+              {{end}}
+            </ul>
+        </li>
+    </ul>
+</nav>

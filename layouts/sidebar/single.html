@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+{{ "<!--[if lt IE 9]>" | safeHTML }}
+<html class="no-js lt-ie9" lang="en" dir="ltr">
+{{ "<![endif]-->" | safeHTML }}
+{{ "<!--[if gt IE 8]><!-->" | safeHTML }}
+<html class="no-js" lang="en" dir="ltr">
+{{ "<!--<![endif]-->" | safeHTML }}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <title>
+        {{ if eq .URL "/" }}
+        {{ .Site.Title }}
+        {{ else if eq .URL "/post/" }}
+        All Entries &middot; {{ .Site.Title }}
+        {{ else if in .URL "/tags/" }}
+        {{ .Site.Title }}
+        {{ else }}
+        {{ .Title }}
+        {{ end }}
+    </title>
+    {{ partial "resources/wxt.html" . }}
+    {{ partial "resources/custom.html" . }}
+</head>
+<body vocab="http://schema.org/" typeof="WebPage">
+    {{ partial "header/skiplink.html" . }}
+    {{ partial "header/header.html" . }}
+    <div class="container">
+        <div class="row">
+        <main role="main" property="mainContentOfPage" class="col-md-9 col-md-push-3">
+        <div class="row">
+            <div class="col-md-12">
+                <article class="post">
+                    <header>
+                        <h1 id="wb-cont" property="name">
+                            {{ .Title }}
+                        </h1>
+                        <div class="post-date mrgn-bttm-md text-muted text-right small">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                            <time datetime="{{ .Date.Format .Site.Params.DateForm }}">
+                                {{ .Date.Format .Site.Params.DateForm }}
+                            </time>
+                        </div>
+                    </header>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6">
+                                    <div id="toc" class="panel panel-default">
+                                        <header class="panel-heading">
+                                            <h2 class="h4 mrgn-tp-0">Table of Contents</h2>
+                                        </header>
+                                        <div class="panel-body">
+                                        {{ .TableOfContents }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="post-content">
+                        {{ .Content }}
+                    </div>
+                    <aside>
+                        {{ $baseurl := .Site.BaseURL }}
+                        <ul class="list-inline post-tags">
+                            {{ range .Params.tags }}
+                            <li>
+                                <a href="{{ $baseurl }}/tags/{{ . | urlize }}">
+                                    <i class="fa fa-tags"></i>
+                                    {{ . }}
+                                </a>
+                            </li>
+                            {{ end }}
+                        </ul>
+                        {{ if .Site.Params.ShowRelatedPost }}
+                        <h3>Related Post</h3>
+                        <ul class="post-rels">
+                            {{ $page_link := .Permalink }}
+                            {{ $tags := .Params.tags }}
+                            {{ range .Site.Pages }}
+                            {{ $page := . }}
+                            {{ $has_common_tags := intersect $tags .Params.tags | len | lt 0 }}
+                            {{ if and $has_common_tags (ne $page_link $page.Permalink) }}
+                            <li><a href="{{ $page.Permalink }}">{{ $page.Title }}</a></li>
+                            {{ end }}
+                            {{ end }}
+                        </ul>
+                        {{ end }}
+                    </aside>
+                    <footer>
+                        {{ partial "components/share.html" . }}
+                        {{ partial "components/pager.html" . }}
+                        {{ partial "comments/disqus.html" . }}
+                    </footer>
+                </article>
+            </div>
+        </div>
+        {{ partial "components/date.html" . }}
+        </main>
+        {{ partial "menu/sidebar.html" . }}
+        </div>
+    </div>
+    {{ partial "footer/footer.html" . }}
+</body>
+</html>
