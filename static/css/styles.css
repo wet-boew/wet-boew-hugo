@@ -36,6 +36,9 @@ header.nav {
     margin-bottom: 50px;
 }
 
+.service h2 {
+    margin-top: 0px;
+}
 footer.copy {
     padding: 20px 0;
 }

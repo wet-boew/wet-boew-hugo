@@ -1,0 +1,14 @@
+<div class="gc-stp-stp">
+    <div class="row">
+        <ul class="toc lst-spcd col-md-12">
+            {{ range .Site.Pages }}
+            {{ $page := . }}
+            {{ if and (eq $page.Section "drupal") (eq $page.Params.type "service") }}
+            <li class="col-md-4 col-sm-6">
+                <a class="list-group-item" href="{{ $page.Permalink }}">{{ $page.Title }}</a>
+            </li>
+            {{ end }}
+            {{ end }}
+        </ul>
+    </div>
+</div>

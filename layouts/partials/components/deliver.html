@@ -1,0 +1,12 @@
+{{ if eq .Params.delivery "hours"}}
+{{ $delivery := "fa fa-check-square-o text-success" }}
+<div class="panel panel-primary">
+    <div class="panel-body">
+      <h2 class="mrgn-tp-0 h4 text-primary">
+        <span class="fa fa-exclamation-triangle"></span> Time to Deliver</h2>
+        <p>Given priority this service can often be implemented and deployed to
+        production within <code class="{{ $delivery }}">
+        {{ .Params.delivery }}</code>.</p>
+    </div>
+</div>
+{{ end }}
