@@ -47,3 +47,8 @@ footer.copy {
     padding-left: 0;
     list-style: none;
 }
+
+.theme-ogpl footer {
+  background: inherit;
+  border-top: none;
+}

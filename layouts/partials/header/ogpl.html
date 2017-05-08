@@ -1,0 +1,45 @@
+<div id="wb-bnr">
+        <div id="wb-bar">
+            <div class="container">
+                <div class="row">
+                   {{ partial "components/langswitcher.html" . }}
+                    <section class="wb-mb-links col-xs-12 visible-sm visible-xs" id="wb-glb-mn">
+                        <h2>Search and menus</h2>
+                        <ul class="pnl-btn list-inline text-right">
+                            <li>
+                                <a href="#mb-pnl" title="Search and menus" aria-controls="mb-pnl" class="overlay-lnk btn btn-sm btn-default" role="button">
+                                    <span class="glyphicon glyphicon-search">
+                                        <span class="glyphicon glyphicon-th-list">
+                                        <span class="wb-inv">Search and menus</span>
+                                    </span>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                        <div id="mb-pnl"></div>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div id="wb-sttl" class="col-md-8">
+                    <a href="{{ .Site.BaseURL }}">
+                        <img id="ogpl-logo" src="{{ .Site.BaseURL }}/lib/{{ .Site.Params.Theme }}/assets/logo.png" alt="">
+                        <span>{{ .Site.Params.Slogan }}</span>
+                    </a>
+                </div>
+                <section id="wb-srch" class="col-md-4 visible-md visible-lg">
+                    <h2>Search</h2>
+                    <form action="https://google.ca/search" method="get" role="search" class="form-inline">
+                        <div class="form-group">
+                            <label for="wb-srch-q">Search website</label>
+                            <input id="wb-srch-q" class="form-control" name="q" type="search" value="" size="27" maxlength="150">
+                            <input type="hidden" name="q" value="site:{{ .Site.Params.Search }} OR site:github.com/{{ .Site.Params.Github }}">
+                        </div>
+                        <button type="submit" id="wb-srch-sub" class="btn btn-default">Search</button>
+                    </form>
+                </section>
+            </div>
+        </div>
+</div>

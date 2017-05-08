@@ -1,6 +1,6 @@
 <div class="gc-stp-stp">
     <div class="row">
-        <ul class="toc lst-spcd col-md-12">
+        <ul class="toc lst-spcd col-md-12 list-unstyled">
             {{ range .Site.Pages }}
             {{ $page := . }}
             {{ if and (eq $page.Section "drupal") (eq $page.Params.type "service") }}

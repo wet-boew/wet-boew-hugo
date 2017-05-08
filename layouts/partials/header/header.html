@@ -1,6 +1,8 @@
 <header role="banner">
     {{ if eq .Site.Params.Theme "theme-gcweb" }}
         {{ partial "header/gcweb.html" . }}
+    {{ else if eq .Site.Params.Theme "theme-ogpl" }}
+        {{ partial "header/ogpl.html" . }}
     {{ else }}
         {{ partial "header/wxt.html" . }}
     {{ end }}

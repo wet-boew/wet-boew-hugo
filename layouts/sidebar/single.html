@@ -22,7 +22,7 @@
     {{ partial "resources/wxt.html" . }}
     {{ partial "resources/custom.html" . }}
 </head>
-<body vocab="http://schema.org/" typeof="WebPage">
+<body vocab="http://schema.org/" typeof="WebPage" class="{{ .Site.Params.Theme }}">
     {{ partial "header/skiplink.html" . }}
     {{ partial "header/header.html" . }}
     <div class="container">
