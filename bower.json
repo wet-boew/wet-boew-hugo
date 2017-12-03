@@ -17,10 +17,10 @@
     "tests"
   ],
   "dependencies": {
-    "wet-boew": "wet-boew/wet-boew-cdn#v4.0.24",
-    "theme-wet-boew": "https://github.com/wet-boew/themes-cdn/archive/v4.0.24-theme-wet-boew.tar.gz",
-    "theme-gcweb": "https://github.com/wet-boew/themes-cdn/archive/v4.0.24-gcweb.tar.gz",
-    "theme-ogpl": "https://github.com/wet-boew/themes-cdn/archive/v4.0.24-theme-ogpl.tar.gz"
+    "wet-boew": "wet-boew/wet-boew-cdn#v4.0.26",
+    "theme-wet-boew": "https://github.com/wet-boew/themes-cdn/archive/v4.0.26-theme-wet-boew.tar.gz",
+    "theme-gcweb": "https://github.com/wet-boew/themes-cdn/archive/v4.0.26-gcweb.tar.gz",
+    "theme-ogpl": "https://github.com/wet-boew/themes-cdn/archive/v4.0.26-theme-ogpl.tar.gz"
   },
   "main": "index.html"
 }
