@@ -38,12 +38,22 @@ Simply follow the commands listed below given you have the appropriate files
 (config.yml|toml etc) at the project root.
 
 ```sh
-    hugo new site `website`
-    mkdir themes && cd themes
-    git clone https://github.com/wet-boew/wet-boew-hugo.git wxt && cd wxt
-    bower install
-    hugo server --theme=wxt \
-                --watch
+	# Create a new site called 'website'
+	hugo new site website
+	cd website
+	
+	# Add the theme
+	cd themes
+	git clone https://github.com/wet-boew/wet-boew-hugo.git wxt && cd wxt
+	bower install
+	
+	# Copy the theme's configuration to the root of 'website'
+	cd ../../
+	cp themes/wxt/config.yaml .
+	rm config.toml
+	
+	# Start the hugo server and watch the filesystem for changes
+	hugo server --theme=wxt --watch
 ```
 
 <!-- Links Referenced -->
