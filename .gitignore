@@ -27,3 +27,4 @@ vendor/
 # Hugo
 public/
 static/lib
+node_modules

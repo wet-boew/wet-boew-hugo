@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "@bower_components/theme-gcweb": "https://github.com/wet-boew/themes-cdn/archive/v4.0.28.1-gcweb.tar.gz",
+    "@bower_components/theme-wet-boew": "https://github.com/wet-boew/themes-cdn/archive/v4.0.28.1-theme-wet-boew.tar.gz",
+    "@bower_components/wet-boew": "wet-boew/wet-boew-cdn#v4.0.28.1"
+  },
+  "engines": {
+    "yarn": ">= 1.0.0"
+  },
+  "scripts": {}
+}
